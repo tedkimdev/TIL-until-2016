@@ -7,8 +7,11 @@ Webview 띄울 때, key 부분만 수정하여 추가하여 Referer 값을 저�
 
 
 ex)iOS objective-C
+
 `NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
+
 [request addValue:@”정의된 URI” forHTTPHeaderField:@”Referer”];
+
 [webView loadRequest:request];
 `
 
@@ -16,21 +19,38 @@ ex)iOS objective-C
 특정 디바이스에서 요청할 때, 다르게 처리하고 싶으면..
 
 ex)
+
 `if(navigator.userAgent.indexOf("Tizen") != -1){
+
     // This is Tizen platform
+    
     if(navigator.userAgen.indexOf("TV") != -1){
+    
         //This is Tizen TV
+        
         if(navigator.userAgent.indexOf("sdk") != -1){
+        
         // This is an emulator
+        
             } else {
+            
         // This is real device
+        
                    }
+                   
     } 
+    
     else {
+    
     //This is Tizen but not TV
+    
     }
+    
 }
+
 else {
+
     // This is not Tizen platform.
+    
 }
 `
