@@ -8,7 +8,8 @@ Webview 띄울 때, key 부분만 수정하여 추가하여 Referer 값을 저�
 
 ex)iOS objective-C
 
-`NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
+`
+NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
 
 [request addValue:@”정의된 URI” forHTTPHeaderField:@”Referer”];
 
@@ -20,7 +21,8 @@ ex)iOS objective-C
 
 ex)
 
-`if(navigator.userAgent.indexOf("Tizen") != -1){
+`
+if(navigator.userAgent.indexOf("Tizen") != -1){
 
     // This is Tizen platform
     
