@@ -1,0 +1,15 @@
+<body>
+	<script>
+		console.group('Group');
+			console.info('I');
+			console.log('L');
+		console.groupEnd('Group');
+
+		console.group('Group2');
+			console.group('Group3');
+				console.info('I2');
+			console.groupEnd('Group3');
+			console.log('L2');
+		console.groupEnd('Group2');
+	</script>
+</body>
