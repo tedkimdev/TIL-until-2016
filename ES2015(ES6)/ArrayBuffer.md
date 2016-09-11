@@ -62,10 +62,14 @@ let int32View = new Int32Array(bufferObj);
 ####new ArrayBuffer()
   - 인스턴스에 내부 슬롯 설정
     - [[ArrayBufferData]], [[ArrayBufferByteLength]]
+
 ####byteLength 
+
 ####slice()
   - ArrayBuffer 인스턴스에서 지정한 범위 복사
+
 ####Symbol.species
+
 ####isView()
   - TypedArray or DataView 여부 리턴
 ```javascript
