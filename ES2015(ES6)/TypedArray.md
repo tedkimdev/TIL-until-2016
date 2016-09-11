@@ -146,3 +146,126 @@ let clampedObj = new Uint8ClampedArray(bufferObj);
 //257: 255
 
 ```
+
+###BYTES_PER_ELEMENT
+```javascript
+let twoObj = new Int16Array(bufferObj, 4, 2);
+// 4바이트 떨어진 5번 째 위치부터 4(2*2)바이트를 사용
+
+console.log(oneObj.BYTES_PER_ELEMENT);	// 2
+```
+
+###Buffer
+
+###byteOffset
+```javascript
+let twoObj = new Int16Array(bufferObj, 4, 2);
+// 4바이트 떨어진 5번 째 위치부터 4(2*2)바이트를 사용
+
+console.log(twoObj.byteOffset);			// 4
+```
+
+###from()
+  - TypedArray.from() , static method
+
+```javascript
+let oneObj = Uint8Array.from([12,34]);
+console.log(oneObj);
+//{0: 12} {1: 34}
+
+let twoObj = Uint8Array.from('12');
+console.log(twoObj);
+//{0: 1} {1: 2}
+
+
+let threeObj = Uint8Array.from('56', (value)=>{
+	console.log(value);
+	return value;
+}, this);
+//5, 6
+
+let fourObj = Uint8Array.from({length: 3}, (value, key)=>key);
+console.log(fourObj);
+//{0:0} {1:1} {2:2}
+```
+
+###of()
+  - TypedArray.of() , static method
+
+```javascript
+let oneObj = Uint8Array.of(10);
+console.log(oneObj);
+//{0: 10}
+
+let twoObj = Uint8Array.of(20, 30, 40);
+console.log(twoObj);
+//{0: 20} {1: 30} {2: 40}
+```
+
+###set()
+```javascript
+let bufferObj = new ArrayBuffer(6);
+let uint8Obj = new Uint8Array(bufferObj);
+
+uint8Obj.set([10, 20, 30], 2);
+//3번 째부터 [10, 20, 30] set
+
+console.log(uint8Obj);
+/*
+{0: 0}
+{1: 0}
+{2: 10}
+{3: 20}
+{4: 30}
+{5: 0}
+*/
+```
+
+###subarray()
+  - ArrayBuffer 데이터를 복사하여 반환
+
+###Symbol.iterator()
+```javascript
+let uint8Obj = new Uint8Array([10, 20]);
+let iteratorObj = uint8Obj[Symbol.iterator]();
+
+iteratorObj.next();
+```
+
+###copyWithin()
+  - 같은 TypedArray 에서 범위 값을 사용하여 지정한 위치에 설정
+  - Array.prototype.copyWithin() 과 같음
+
+###structure
+  - 다른데이터 타입을 하나로 묶어 놓은 상태
+  - TypedArray로 구조체를 만들 수 있음.
+  - {key:value}는 구조체와 형태에서 차이 있음
+
+```javascript
+/*
+품명코드 : Uint8(1*10)
+품명 : Uint16(2*10), 수량 : Uint16(2*1)
+단가 : Uint16(2*1), 금액 : Uint32(4*1)
+*/
+
+let itemObj = {code:'book', desc:'javascript',
+				qty:1, price:20, amount:200};
+
+let bufferObj = new Arraybuffer(40);
+//전체 바이트 40 인스턴스 생성
+
+let codeObj = new Uint8Array(bufferObj, 0, 10);
+// 품명 코드를 저장하기 위한 인스턴스
+// 숫자와 대소문자 사용 가능
+// 숫자와 영문값이 255보다 작으므로 Uint8타입 인스턴스에 저장 가능
+// ArrayBuffer의 0번부터 1바이트 10개 사용
+
+for (var k = 0; k < itemObj.code.length; k++) {
+	codeObj.set([itemObj.code.charCodeAt(k)], k);
+};
+//ArrayBuffer 에 바이너리 값을 설정해야함.
+//itemObj.code 값 'book'를 한씩 유니코드로 변환
+//전체 10바이트 중 앞에 4바이트만 값이 설정, 나머지는 0으로 설정됨.
+
+
+```
