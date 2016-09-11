@@ -295,4 +295,23 @@ amountObj.set([itemObj.amount]);
 // 34를 4로 나누면 2가 남아 4바이트 단위에 맞지 않음.. => 에러 발생
 // 그래서 인스턴스 총 바이트 수도 40
 // 가운데 2바이트가 비어있는 상태
+
+/* print */
+
+let result =  [];
+
+for (var k = 0; k < itemObj.code.length; k++) {
+	result.push(String.fromCharCode(codeObj[k]));
+}
+
+for (var k = 0; k < itemObj.desc.length; k++) {
+	result.push(String.fromCharCode(descObj[k]));
+}
+
+result.push(qtyObj[0]);
+result.push(priceObj[0]);
+result.push(amountObj[0]);
+
+console.log(result.join(''));
+//book자바스크립트120200
 ```
