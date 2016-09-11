@@ -237,7 +237,7 @@ iteratorObj.next();
   - Array.prototype.copyWithin() 과 같음
 
 ###structure
-  - 다른데이터 타입을 하나로 묶어 놓은 상태
+  - 다른 데이터 타입을 하나로 묶어 놓은 상태
   - TypedArray로 구조체를 만들 수 있음.
   - {key:value}는 구조체와 형태에서 차이 있음
 
@@ -248,7 +248,7 @@ iteratorObj.next();
 단가 : Uint16(2*1), 금액 : Uint32(4*1)
 */
 
-let itemObj = {code:'book', desc:'javascript',
+let itemObj = {code:'book', desc:'자바스크립트',
 				qty:1, price:20, amount:200};
 
 let bufferObj = new Arraybuffer(40);
@@ -268,4 +268,30 @@ for (var k = 0; k < itemObj.code.length; k++) {
 //전체 10바이트 중 앞에 4바이트만 값이 설정, 나머지는 0으로 설정됨.
 
 
+let descObj = new Uint16Array(bufferObj, 10, 10);
+// 풍명을 저장하기 위한 인스턴스
+// 한글은 유니코드 2바이트 사용
+// 10번 인덱스부터 2바이트 단위로 10개이므로 20바이트 사용
+
+for (var k = 0; k < itemObj.desc.length; k++) {
+	descObj.set([itemObj.desc.charCodeAt(k)], k);
+};
+
+let qtyObj = new Uint16Array(bufferObj, 30, 1);
+qtyObj.set([itemObj.qty]);
+// 수량을 저장하기 위한 인스턴스
+// 음수가 없다고 가정, 품명코드(10)과 품명(20)이 30바이트 사용하므로
+// 30번 인덱스부터 2바이트 1개 사용
+
+let priceObj = new Uint16Array(bufferObj, 32, 1);
+priceObj.set([itemObj.price]);
+//가격을 저장하기 위한 인스턴스
+
+let amountObj = new Uint32Array(bufferObj, 36, 1);
+amountObj.set([itemObj.amount]);
+// 금액을 저장하기 위한 인스턴스 생성
+// 바로 앞 단가의 offset 단위를 맞추어야 함.
+// 36부터 인 이유는.. 2byte boundary 에 맞아야 하기 때문에..
+// 그래서 인스턴스 총 바이트 수도 40
+// 가운데 2바이트가 비어있는 상태
 ```
