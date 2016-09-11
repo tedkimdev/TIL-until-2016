@@ -236,7 +236,7 @@ iteratorObj.next();
   - 같은 TypedArray 에서 범위 값을 사용하여 지정한 위치에 설정
   - Array.prototype.copyWithin() 과 같음
 
-###structure
+##structure 구조체
   - 다른 데이터 타입을 하나로 묶어 놓은 상태
   - TypedArray로 구조체를 만들 수 있음.
   - {key:value}는 구조체와 형태에서 차이 있음
@@ -292,6 +292,7 @@ amountObj.set([itemObj.amount]);
 // 금액을 저장하기 위한 인스턴스 생성
 // 바로 앞 단가의 offset 단위를 맞추어야 함.
 // 36부터 인 이유는.. 2byte boundary 에 맞아야 하기 때문에..
+// 34를 4로 나누면 2가 남아 4바이트 단위에 맞지 않음.. => 에러 발생
 // 그래서 인스턴스 총 바이트 수도 40
 // 가운데 2바이트가 비어있는 상태
 ```
