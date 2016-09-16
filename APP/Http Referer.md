@@ -18,38 +18,22 @@ NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
 특정 디바이스에서 요청할 때, 다르게 처리하고 싶으면..
 
 ex)
-```
+```javascript
 if(navigator.userAgent.indexOf("Tizen") != -1){
-
     // This is Tizen platform
-    
     if(navigator.userAgen.indexOf("TV") != -1){
-    
         //This is Tizen TV
-        
         if(navigator.userAgent.indexOf("sdk") != -1){
-        
         // This is an emulator
-        
             } else {
-            
         // This is real device
-        
                    }
-                   
     } 
-    
     else {
-    
     //This is Tizen but not TV
-    
     }
-    
 }
-
 else {
-
     // This is not Tizen platform.
-    
 }
 ```
