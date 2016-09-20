@@ -8,8 +8,7 @@ export default class Counter extends Component {
 
   decrease() {
     this.setState({count: this.state.count -1});
-
-    this.props.updateDescribe('Click "decrease" button');
+    this.props.counterDesc('Click "decrease" button');
   }
 
   render() {
