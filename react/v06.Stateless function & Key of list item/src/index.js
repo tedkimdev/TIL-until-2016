@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Counter2, {a as a2, b} from './components/Counter'
+import Counter2 from './components/Counter'
 import Sum from './components/Sum'
 import RandomImages from './components/RandomImages'
 
 class Describe extends Component {
-  constructor(props) {
-    super(props)
-    
-  }
+
   render() {
     return(
       <div>
@@ -34,7 +31,7 @@ class Examples extends Component {
     return (
       <div>
         <h1>React</h1>
-        <Describe desc= {this.state.describe} />
+        <Describe desc={this.state.describe} />
         <Counter2 counterDesc={this.updateDescribe}/>
         <Sum sumDesc={this.updateDescribe}/>
         <RandomImages/>

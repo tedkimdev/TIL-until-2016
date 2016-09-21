@@ -33,9 +33,14 @@ export default class RandomImages extends Component {
 
 //stateless function
 function ImageList(props) {
+
   return (
     <div>
-    {props.images.map((image)=> (<img src={image.link} style={{height:"200px"}}/>))}
+    {props.images.map((image)=>
+     (<img key={image.id}
+           src={image.link}
+           style={{height:"200px"}}
+           alt={image.title}/>))}
     </div>
   )
 }
