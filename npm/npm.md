@@ -44,3 +44,9 @@ node app.js
 npm start
 Server running at http://127.0.0.1:3000/
 ```
+
+##Curl로 리퀘스트 보내기
+```
+curl -X GET '127.0.0.1:3000'
+```
+##또는 Postman으로 리퀘스트 보내기
