@@ -1,4 +1,4 @@
-#nodejs
+#Node.js
 
 - Node.js는 코드를 실행할 수 있는 Javascript 런타임
 
