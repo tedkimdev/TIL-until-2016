@@ -1,21 +1,26 @@
 #NPM
 
+ - NPMSearch 에서 탐색 가능한 Node.js 패키지/모듈 저장소
+ - Node.js 패키지 설치 및 버전/ 호환성 관리를 해주는 커맨드라인 유틸리티
+ 
+
 ##노드 명령어 위치 확인
 ```
-whice node
+$ whice node
 /usr/local/bin/node
 ```
 
 ##버전 확인
 ```
-node --version
+$ node --version
 v6.6.0
+$ npm --version
 ```
 
 ```
-mkdir projectName
-cd projectName
-npm init
+$ mkdir projectName
+$ cd projectName
+$ npm init
 ```
 
 ##실행
