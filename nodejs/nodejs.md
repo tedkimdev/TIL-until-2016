@@ -36,3 +36,50 @@
  ```
   node main.js
  ```
+
+-----------------------
+
+##Node.js Application 만들기
+### #1 모듈 import
+```javascript
+var http = require("http");
+```
+### #2 서버 생성
+- http 인스턴스를 사용하여 http.createServer() 메소드 실행
+- listen 메소드를 사용하여 포트 8081 bind
+
+```javascript
+http.createServer(function(request, response) {
+  /* http 헤더,
+     http status: 200 : ok
+     Content Type: text/plain
+  */
+  response.writeHead(200, {'Content-Type': 'text/plain'});
+  
+  /* Response Body 설정 */
+  response.end("Hello World");
+}).listen(8081);
+```
+### #3 서버 테스트
+```javascript
+var http = require("http");
+
+http.createServer(function(request, response){
+    /* 
+        HTTP 헤더 전송
+        HTTP Status: 200 : OK
+        Content Type: text/plain
+    */
+    response.writeHead(200, {'Content-Type': 'text/plain'});
+    
+    /*  Response Body 설정  */
+    response.end("Hello World\n");
+}).listen(8081);
+
+console.log("Server running at http://127.0.0.1:8081");
+```
+
+```
+$ node main.js
+Server running at http://127.0.0.1:8081/
+```
