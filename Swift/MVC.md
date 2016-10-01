@@ -13,3 +13,11 @@
 
 ##data source
 - 뷰에 있는 프로퍼티
+
+
+
+
+
+Xcode
+
+ctrl + i : 재정렬
