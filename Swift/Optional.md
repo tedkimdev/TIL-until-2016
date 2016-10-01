@@ -14,4 +14,14 @@
   let digit = sender.currentTitle!
 ```
 - ! 는 set 되어있지 않은 상태에 있는 Optional 에서 값을 꺼낼 때, 에러가 난다. 
- - 즉, nil 인 경우에 !를 쓰면 에러가 날 것이다.
+  - 즉, nil 인 경우에 !를 쓰면 에러가 날 것이다.
+ 
+- Optional 프로퍼티는 기본값이 nil
+```swift
+  if let varName = sender.currentTitle {
+    if varName == "n" {
+      display.text = String(M_PI)
+    }
+  }
+```
+ - Optional 이 set 되면 { } 스코프 안에 로직 수행
