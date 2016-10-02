@@ -25,3 +25,12 @@
   }
 ```
  - Optional 이 set 되면 { } 스코프 안에 로직 수행
+
+
+## Optional은 Dictionary 처럼 제네릭 타입이다.
+```Swift
+enum Optional<T> {
+    case None
+    case Some(T)
+}
+```
