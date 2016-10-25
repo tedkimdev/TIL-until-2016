@@ -1,5 +1,6 @@
 #\<script\> 태그에 src attribute에 variable 사용
-###Use JS variable to set the src attribute for <script> tag
+###Use JS variable to set the src attribute for \<script\> tag
+
 
 ```javascript
 <script type="text/javascript"> 
