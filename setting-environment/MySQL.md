@@ -34,9 +34,9 @@ echo $PATH : path 확ㅣ
 mysql -u root -p
 ```
 
-###4. password 설정
+###4. password 설정(1234)
 ```
-update user set password=password('사용하고 싶은 패스워드') where user='root';
+update user set password=password('1234') where user='root';
 ```
 
 
