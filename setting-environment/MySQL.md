@@ -29,24 +29,24 @@ source ~/.bash_profile : 다시 등록
 echo $PATH : path 확ㅣ
 ```
 
-MySQL 접속
+3. MySQL 접속
 ```
 mysql -u root -p
 ```
 
-password 설정
+4. password 설정
 ```
 update user set password=password('사용하고 싶은 패스워드') where user='root';
 ```
 
 
-MySQL UTF-8로 환경 설정
+5. MySQL UTF-8로 환경 설정
 ```
 cd /usr/local/mysql
 sudo vi my.cnf
 ```
 
-my.cnf 파일에 수정 및 추가
+ - my.cnf 파일에 수정 및 추가
 ```
 [mysqld]
 init_connect="SET collation_connection=utf8_general_ci"
@@ -62,7 +62,7 @@ default-character-set=utf8
 default-character-set=utf8
 ```
 
-MySQL Restart 후, UTF-8 설정 확인
+6. MySQL Restart 후, UTF-8 설정 확인
 
 ```
 mysql -u root -p
@@ -72,7 +72,7 @@ mysql> show variables like 'c%';
 
 
 
-###기존 인스톨된 mysql 삭제
+####기존 인스톨된 mysql 삭제
 ```
 sudo rm /usr/local/mysql
 sudo rm -rf /usr/local/mysql*
