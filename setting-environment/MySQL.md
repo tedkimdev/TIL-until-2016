@@ -1,6 +1,6 @@
 #MySQL 설치
 
-1. MySQL dmg 설치
+###1. MySQL dmg 설치
  - 시스템 환경 설정에서 mysql icon 확인 및 mysql start, stop 되는지 확인
 
 ```
@@ -10,7 +10,7 @@ cd bin
 sudo ./mysql
 ```
 
-2. Path 설정
+###2. Path 설정
  - mysql의 실행경로를 PATH에 추가 -> 절대경로 지정없이 mysql 실행
  
   - .bash_profile : 사용자 계정에서 환경을 설정해주는 파일
@@ -29,18 +29,18 @@ source ~/.bash_profile : 다시 등록
 echo $PATH : path 확ㅣ
 ```
 
-3. MySQL 접속
+###3. MySQL 접속
 ```
 mysql -u root -p
 ```
 
-4. password 설정
+###4. password 설정
 ```
 update user set password=password('사용하고 싶은 패스워드') where user='root';
 ```
 
 
-5. MySQL UTF-8로 환경 설정
+###5. MySQL UTF-8로 환경 설정
 ```
 cd /usr/local/mysql
 sudo vi my.cnf
@@ -62,7 +62,7 @@ default-character-set=utf8
 default-character-set=utf8
 ```
 
-6. MySQL Restart 후, UTF-8 설정 확인
+###6. MySQL Restart 후, UTF-8 설정 확인
 
 ```
 mysql -u root -p
