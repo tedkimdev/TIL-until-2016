@@ -71,8 +71,56 @@ mysql> show variables like 'c%';
 ```
 
 
+###ETC
+###사용자 생성
 
-####기존 인스톨된 mysql 삭제
+####mysql 서버 로그인하기
+```
+ $ mysql -uroot -prootpassword mysql
+```
+
+####다른 PC에서 mysql 서버로 접속을 하기 위한 사용자 추가
+```
+create user 'userId'@'%' identified by 'userPassword';
+```
+
+
+####위 사용자에게 모든 것을 할 수 있는 권한 주기
+```
+grant all privileges on *.* to 'userId'@'%';
+```
+
+####데이터베이스 보기
+```
+show databases;
+```
+
+####데이터베이스 생성
+```
+create database dbName;
+```
+
+####위 사용자에게 특정 DB를 관리할수 있는 권한 주기
+```
+grant all privileges on dbName.* to 'userId'@'%';
+```
+
+####로컬PC에서 mysql로 접속하기 위한 사용자 추가
+```
+create user 'userId'@'localhost' identified by 'userPassword';
+```
+
+####위 사용자에게 모든 것을 할 수 있는 권한 주기
+```
+grant all privileges on *.* to 'userId'@'localhost';
+```
+
+####위 사용자에게 특정 DB를 관리할 수 있는 권한 주기
+```
+grant all privileges on dbname.* to 'userId'@'localhost';
+```
+
+###기존 인스톨된 mysql 삭제
 ```
 sudo rm /usr/local/mysql
 sudo rm -rf /usr/local/mysql*
