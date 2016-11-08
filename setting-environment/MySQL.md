@@ -71,7 +71,7 @@ mysql> show variables like 'c%';
 ```
 
 
-###ETC
+##ETC
 ###사용자 생성
 
 ####mysql 서버 로그인하기
