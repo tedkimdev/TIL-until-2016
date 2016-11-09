@@ -26,7 +26,7 @@ export PATH=${PATH}:${MYSQL_HOME}/bin
 
 source ~/.bash_profile : 다시 등록
 
-echo $PATH : path 확ㅣ
+echo $PATH : path 확인
 ```
 
 ###3. MySQL 접속
