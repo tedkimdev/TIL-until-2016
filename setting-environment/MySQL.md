@@ -69,7 +69,12 @@ mysql -u root -p
 
 mysql> show variables like 'c%';
 ```
-
+###7. MySQL Port
+my.cnf
+```
+[mysqld]
+port=8888
+```
 
 ##ETC
 ###사용자 생성
