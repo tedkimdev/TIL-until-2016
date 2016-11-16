@@ -14,7 +14,7 @@ th:text="${class.bean}"
 ```
 <dd th:text="${#numbers.formatDecimal(product.price, 1, 2)}">350</dd> 
 
-<dd th:text="${#dates.format(product.availableFrom, 'dd-MMM-yyyy')}">28-Jun2013</dd>
+<dd th:text="${#dates.format(product.availableFrom, 'dd-MMM-yyyy')}">28-Jun-2013</dd>
 ```
 
 
