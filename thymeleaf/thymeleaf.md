@@ -19,3 +19,6 @@ th:text="${class.bean}"
 
 
 ### prototype(퍼블리싱 작업된 html) 에 템플릿 작성하기 쉬워 보인다.
+
+
+###Object
