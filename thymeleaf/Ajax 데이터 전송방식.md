@@ -9,6 +9,7 @@ anyone, anyId, HR
 ```
 
 ###2. XML 형식
+```
 <entries>  
     <entry name="ANEY" id="00aney">
         <part>
@@ -21,7 +22,7 @@ anyone, anyId, HR
         </part>
     </entry>
 </entries>  
-
+```
 ###3. JSON 형식
 ```
 [{
