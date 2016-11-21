@@ -59,3 +59,37 @@ public void AjaxView(
     }   
 }
 ```
+
+###2.@ResponseBody
+메소드 return 형 앞에 @ResponseBody 붙여서 사용.
+해당 객체가 자동으로 Json객체로 변환되어 반환
+
+1. jackson-mapper-asl 라이브러리 추가
+```
+<dependency>  
+       <groupId>org.codehaus.jackson</groupId>
+       <artifactId>jackson-mapper-asl</artifactId>
+       <version>버전</version>
+</dependency>  
+```
+
+servlet xml에 아래와 같이 어노테이션을 설정해줍니다.
+```
+<annotation-driven />  
+```
+
+```java
+//Controller
+@RequestMapping(value= "/~", method=RequestMethod.POST)
+public @ResponseBody SocialPerson AjaxView(  
+        @RequestParam("id") String id)  {
+
+    SocialPerson person = personRepository.findById(id);
+    return person;
+}
+```
+
+
+
+
+
