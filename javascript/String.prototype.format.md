@@ -36,3 +36,4 @@ javascript 에서 자바의 stringformat과 유사하게 사용
 ##ref
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
 
+* String.prototye
